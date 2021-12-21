@@ -1,0 +1,100 @@
+{
+  "name": "vue3-electron16-webpack5-boilerplate",
+  "version": "1.0.0",
+  "description": "Project with stack: Electron, Vue 3, Webpack 5",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moderatoo/vue3-electron16-webpack5-boilerplate.git"
+  },
+  "keywords": [
+    "electron",
+    "vue",
+    "boilerplate",
+    "hot",
+    "reload",
+    "router",
+    "vuex",
+    "resource"
+  ],
+  "author": "Michał Żochowski",
+  "license": "MIT",
+  "scripts": {
+    "dev": "node ./config/dev.js",
+    "build": "node ./config/build.js",
+    "clean": "node ./config/clean.js"
+  },
+  "dependencies": {
+    "vue": "^3.2.26",
+    "vue-router": "^4.0.12"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
+    "@vue/compiler-sfc": "^3.2.26",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.2.3",
+    "cfonts": "^2.10.0",
+    "chalk": "^4.1.2",
+    "cross-spawn": "^7.0.3",
+    "css-loader": "^5.2.7",
+    "del": "^6.0.0",
+    "electron": "^16.0.5",
+    "electron-builder": "^22.14.5",
+    "electron-devtools-installer": "^3.2.0",
+    "electron-log": "^4.4.3",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-import-resolver-webpack": "^0.13.2",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-prettier": "^3.4.1",
+    "eslint-plugin-vue": "^7.20.0",
+    "eslint-webpack-plugin": "^2.6.0",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "prettier": "^2.5.1",
+    "style-loader": "^2.0.0",
+    "vue-eslint-parser": "^7.11.0",
+    "vue-loader": "^16.8.3",
+    "vue-template-compiler": "^2.6.14",
+    "webpack": "^5.65.0",
+    "webpack-dev-server": "^3.11.3",
+    "webpack-merge": "^5.8.0"
+  },
+  "build": {
+    "buildDependenciesFromSource": true,
+    "appId": "com.rubyon.app",
+    "directories": {
+      "output": "build"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "./src/renderer/assets/icons/icon.icns"
+    },
+    "win": {
+      "target": "portable",
+      "icon": "./src/renderer/assets/icons/icon.png"
+    },
+    "mac": {
+      "identity": null,
+      "target": {
+        "target": "dmg",
+        "arch": "arm64"
+      },
+      "icon": "./src/renderer/assets/icons/icon.icns"
+    },
+    "files": [
+      "package.json",
+      {
+        "from": "dist",
+        "filter": [
+          "renderer.js",
+          "main.js",
+          "index.html",
+          "images/*.*"
+        ]
+      }
+    ]
+  }
+}
